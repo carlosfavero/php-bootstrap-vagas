@@ -9,7 +9,14 @@
                         <td>'.$vacancy->description.'</td>
                         <td>'.($vacancy->active == 's' ? 'Ativa' : 'Inativa').'</td>
                         <td>'.date('d/m/Y à\s H:i:s',strtotime($vacancy->date)).'</td>
-                        <td></td>
+                        <td>
+                            <a href="edit.php?id='.$vacancy->id.'">
+                                <button type="button" class="btn btn-primary">Editar</button>
+                            </a>
+                            <a href="remove.php?id='.$vacancy->id.'">
+                                <button type="button" class="btn btn-danger">Remover</button>
+                            </a>
+                        </td>
                     </tr>';
 
     }

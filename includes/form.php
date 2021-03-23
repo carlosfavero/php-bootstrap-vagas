@@ -6,18 +6,18 @@
         </a>
     </section>
 
-    <h2 class="mt-2">Cadastrar vaga</h2>
+    <h2 class="mt-2"><?=TITLE?></h2>
 
     <form method="post">
 
         <div class="form-group">
             <label>Titulo</label>
-            <input type="text" class="form-control" name="title"/>
+            <input type="text" class="form-control" name="title" value="<?=$obVacancy->title?>"/>
         </div>
 
         <div class="form-group">
             <label>Descrição</label>
-            <textarea class="form-control" name="description"></textarea>
+            <textarea class="form-control" name="description"><?=$obVacancy->description?></textarea>
         </div>
 
         <div class="form-group">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-check form-check-inline">
                     <label class="form-control">
-                        <input type="radio" name="active" value="n"> Inativa
+                        <input type="radio" name="active" value="n" <?=$obVacancy->active == 'n' ? 'checked' : ''?>> Inativa
                     </label>
                 </div>
             </div>
