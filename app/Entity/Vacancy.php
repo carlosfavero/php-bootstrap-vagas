@@ -18,13 +18,23 @@ class Vacancy {
         $obDatabase = new Database('vagas');
         //echo "<pre>"; print_r($obDatabase); echo "</pre>"; exit;
         $this->id = $obDatabase->insert([
-                                'title'         => $this->title,
-                                'description'   => $this->description,
-                                'active'        => $this->active,
-                                'date'          => $this->date
-                            ]);
+                                            'title'         => $this->title,
+                                            'description'   => $this->description,
+                                            'active'        => $this->active,
+                                            'date'          => $this->date
+                                        ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
         return true;
+    }
+
+    public function update() {
+        return (new Database('vagas'))->update('id = '.$this->id, [
+                                                                    'title'         => $this->title,
+                                                                    'description'   => $this->description,
+                                                                    'active'        => $this->active,
+                                                                    'date'          => $this->date
+                                                                ]);
+            
     }
     
     public static function getVacancies($where = null, $order = null, $limit = null) {

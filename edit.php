@@ -24,9 +24,9 @@ if(isset($_POST['title'],$_POST['description'],$_POST['active'])){
     $obVacancy->title       = $_POST['title'];
     $obVacancy->description = $_POST['description'];
     $obVacancy->active      = $_POST['active'];
-    //$obVacancy->register();    
+    $obVacancy->update();    
 
-    //header('location: index.php?status=success');
+    header('location: index.php?status=success');
     exit;
 }
 
