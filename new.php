@@ -12,6 +12,8 @@ if(isset($_POST['title'],$_POST['description'],$_POST['active'])){
     $obVacancy->active      = $_POST['active'];
     $obVacancy->register();    
 
+    header('location: index.php?status=success');
+    exit;
 }
 
 include __DIR__.'/includes/header.php';

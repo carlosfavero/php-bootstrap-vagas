@@ -16,13 +16,13 @@ class Vacancy {
 
         $obDatabase = new Database('vagas');
         //echo "<pre>"; print_r($obDatabase); echo "</pre>"; exit;
-        $obDatabase->insert([
+        $this->id = $obDatabase->insert([
                                 'title'         => $this->title,
                                 'description'   => $this->description,
                                 'active'        => $this->active,
                                 'date'          => $this->date
                             ]);
-            
-        
+        //echo "<pre>"; print_r($this); echo "</pre>"; exit;
+        return true;
     }
 }
