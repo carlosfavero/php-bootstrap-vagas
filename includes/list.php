@@ -1,7 +1,19 @@
 <?php
 
-    $results = '';
+    $message = '';
+    if(isset($_GET['status'])) {
+        switch ($_GET['status']) {
+            case 'success':
+                $message = '<div class="alert alert-success">Ação executada com sucesso!</div>';
+                break;
 
+            case 'error':
+                $message = '<div class="alert alert-danger">Ação não executada!</div>';
+                break;                                
+        }        
+    }
+
+    $results = '';
     foreach($obVacancy as $vacancy){
         $results .= '<tr>
                         <td>'.$vacancy->id.'</td>
@@ -20,10 +32,15 @@
                     </tr>';
 
     }
+    $results = strlen($results) ? $results : '<tr>
+                                                <td colspan="6" class="text-center">Nenhuma vaga encontrada</td>
+                                            </tr>';
 
 ?>
 
 <main>
+
+    <?=$message?>
 
     <section>
         <a href="new.php">
