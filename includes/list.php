@@ -1,3 +1,21 @@
+<?php
+
+    $results = '';
+
+    foreach($obVacancy as $vacancy){
+        $results .= '<tr>
+                        <td>'.$vacancy->id.'</td>
+                        <td>'.$vacancy->title.'</td>
+                        <td>'.$vacancy->description.'</td>
+                        <td>'.($vacancy->active == 's' ? 'Ativa' : 'Inativa').'</td>
+                        <td>'.date('d/m/Y à\s H:i:s',strtotime($vacancy->date)).'</td>
+                        <td></td>
+                    </tr>';
+
+    }
+
+?>
+
 <main>
 
     <section>
@@ -19,7 +37,7 @@
                 </tr>
             </thead>
             <tbody>
-
+                <?=$results?>
             </tbody>
         </table>
     </section>

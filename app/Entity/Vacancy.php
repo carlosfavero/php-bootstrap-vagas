@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use \App\Db\Database;
+use \PDO;
 
 class Vacancy {
     public $id;
@@ -24,5 +25,10 @@ class Vacancy {
                             ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
         return true;
+    }
+    
+    public static function getVacancies($where = null, $order = null, $limit = null) {
+        return (new Database('vagas'))->select($where,$order,$limit)
+                                        ->fetchAll(PDO::FETCH_CLASS,self::class);
     }
 }
