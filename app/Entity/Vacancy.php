@@ -33,8 +33,11 @@ class Vacancy {
                                                                     'description'   => $this->description,
                                                                     'active'        => $this->active,
                                                                     'date'          => $this->date
-                                                                ]);
-            
+                                                                ]);            
+    }
+
+    public function remove() {
+        return (new Database('vagas'))->delete('id = '.$this->id);            
     }
     
     public static function getVacancies($where = null, $order = null, $limit = null) {

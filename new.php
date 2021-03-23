@@ -5,10 +5,10 @@ require __DIR__.'/vendor/autoload.php';
 define('TITLE', 'Cadastrar vaga');
 
 use \App\Entity\Vacancy;
+$obVacancy = new Vacancy;
 
 if(isset($_POST['title'],$_POST['description'],$_POST['active'])){
     
-    $obVacancy = new Vacancy;
     $obVacancy->title       = $_POST['title'];
     $obVacancy->description = $_POST['description'];
     $obVacancy->active      = $_POST['active'];
