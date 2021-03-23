@@ -12,7 +12,7 @@
   </head>
   <body class="bg-dark text-ligth">
 
-    <div class="container">
+    <div class="container text-light">
 
         <div class="jumbotron bg-danger text-light">
             <h1> Mais Vagas</h1>
