@@ -4,6 +4,9 @@ require __DIR__.'/vendor/autoload.php';
 
 use \App\Entity\Vacancy;
 use \App\Db\Pagination;
+use \App\Session\Login;
+
+Login::requireLogin();
 
 //$search = $_GET['busca'];
 $search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_STRING);

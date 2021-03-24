@@ -58,14 +58,8 @@
     <?=$message?>
 
     <section>
-        <a href="new.php">
-            <button type="button" class="btn btn-success">Nova vaga</button>
-        </a>
-    </section>
-
-    <section>
         <form method="get">
-            <div class="row my-4">
+            <div class="row">
                 <div class="col">
                     <label>Procurar por título</label>
                     <input type="text" name="search" class="form-control" value="<?=$search?>">
@@ -82,6 +76,12 @@
 
                 <div class="col d-flex align-items-end">
                     <button type="submit" class="btn btn-primary">Filtrar</button>
+                </div>
+
+                <div class="col d-flex justify-content-end align-items-end ">
+                    <a href="new.php">
+                        <button type="button" class="btn btn-success">Nova vaga</button>
+                    </a>
                 </div>
             </div>
         </form>

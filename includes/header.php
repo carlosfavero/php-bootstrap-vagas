@@ -1,3 +1,16 @@
+<?php
+
+use \App\Session\Login;
+
+$userLogged = Login::getUserLogged();
+//echo "<pre>"; print_r($userLogged); echo "</pre>"; exit;
+
+$user = $userLogged ? 
+        $userLogged['name'].' <a href="logout.php" class="text-light font-weight-bold ml-2">Sair</a>' : 
+        'Visitante <a href="login.php" class="text-light font-weight-bold ml-2">Entrar</a>';
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,6 +30,12 @@
         <div class="jumbotron bg-danger text-light">
             <h1> Mais Vagas</h1>
             <p>Muitas vagas novas todos os dias</p>
+            
+            <hr class="border-light">
+
+            <div class="d-flex justify-content-start">
+              <?=$user?>
+            </div>
         </div>
 
     

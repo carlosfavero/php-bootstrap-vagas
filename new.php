@@ -5,6 +5,10 @@ require __DIR__.'/vendor/autoload.php';
 define('TITLE', 'Cadastrar vaga');
 
 use \App\Entity\Vacancy;
+use \App\Session\Login;
+
+Login::requireLogin();
+
 $obVacancy = new Vacancy;
 
 if(isset($_POST['title'],$_POST['description'],$_POST['active'])){
