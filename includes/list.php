@@ -36,6 +36,21 @@
                                                 <td colspan="6" class="text-center">Nenhuma vaga encontrada</td>
                                             </tr>';
 
+    unset($_GET['status']);
+    unset($_GET['page']);
+    $gets       = http_build_query($_GET);
+    $gets = $gets ? '&'.$gets : '';
+    
+    $pagination = '';
+    $pages      = $obPagination->getPages();
+    //echo "<pre>"; print_r($pages); echo "</pre>"; exit;
+    foreach($pages as $key=>$page){
+        $class       = $page['current'] ? 'btn-primary' : 'btn-light';
+        $pagination .= '<a href="?page='.$page['page'].$gets.'">
+                            <button type="button" class="btn '.$class.'">'.$page['page'].'</button>
+                        </a>';
+    }
+
 ?>
 
 <main>
@@ -88,5 +103,9 @@
                 <?=$results?>
             </tbody>
         </table>
+    </section>
+
+    <section>
+        <?=$pagination?>
     </section>
 </main>

@@ -45,8 +45,15 @@ class Vacancy {
                                       ->fetchAll(PDO::FETCH_CLASS,self::class);
     }
 
+    public static function getTotal($where = null) {
+        return (new Database('vagas'))->select($where,null,null,'COUNT(*) as total')
+                                      ->fetchObject()
+                                      ->total;
+    }
+
     public static function getVacancy($id) {
         return (new Database('vagas'))->select('id = '.$id)
                                       ->fetchObject(self::class);
     }
+    
 }
