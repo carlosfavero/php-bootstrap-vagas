@@ -1,23 +1,17 @@
 <main>
 
-    <section>
-        <a href="index.php">
-            <button type="button" class="btn btn-success">Voltar</button>
-        </a>
-    </section>
-
-    <h2 class="mt-2"><?=TITLE?></h2>
+    <h2 class="mt-1"><?=TITLE?></h2>
 
     <form method="post">
 
         <div class="form-group">
             <label>Titulo</label>
-            <input type="text" class="form-control" name="title" value="<?=$obVacancy->title?>"/>
+            <input required type="text" class="form-control" name="title" value="<?=$obVacancy->title?>"/>
         </div>
 
         <div class="form-group">
             <label>Descrição</label>
-            <textarea class="form-control" name="description"><?=$obVacancy->description?></textarea>
+            <textarea required class="form-control" name="description"><?=$obVacancy->description?></textarea>
         </div>
 
         <div class="form-group">
@@ -37,7 +31,10 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-success">Enviar</button>
+            <a href="index.php">
+                <button type="button" class="btn btn-success">Voltar</button>
+            </a>
+            <button type="submit" class="btn btn-primary"><?=(TITLE==='Cadastrar vaga'?'Cadastrar':'Atualizar')?></button>
         </div>
 
     </form>

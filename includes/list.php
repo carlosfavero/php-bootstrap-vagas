@@ -49,6 +49,30 @@
     </section>
 
     <section>
+        <form method="get">
+            <div class="row my-4">
+                <div class="col">
+                    <label>Procurar por título</label>
+                    <input type="text" name="search" class="form-control" value="<?=$search?>">
+                </div>
+
+                <div class="col">
+                    <label>Situação</label>
+                    <select name="active" class="form-control">
+                        <option value="">Todas</option>
+                        <option value="s" <?=$active=="s"?'selected':''?>>Ativas</option>
+                        <option value="n" <?=$active=="n"?'selected':''?>>Inativas</option>
+                    </select>
+                </div>
+
+                <div class="col d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section>
         <table class="table bg-light mt-3">
             <thead>
                 <tr>

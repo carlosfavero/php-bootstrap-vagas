@@ -9,13 +9,15 @@ $obVacancy = new Vacancy;
 
 if(isset($_POST['title'],$_POST['description'],$_POST['active'])){
     
-    $obVacancy->title       = $_POST['title'];
-    $obVacancy->description = $_POST['description'];
-    $obVacancy->active      = $_POST['active'];
-    $obVacancy->register();    
+    if(!empty($_POST['title']) and !empty($_POST['description']) and !empty($_POST['active'])){
+        $obVacancy->title       = $_POST['title'];
+        $obVacancy->description = $_POST['description'];
+        $obVacancy->active      = $_POST['active'];
+        $obVacancy->register();    
 
-    header('location: index.php?status=success');
-    exit;
+        header('location: index.php?status=success');
+        exit;
+    }
 }
 
 include __DIR__.'/includes/header.php';
